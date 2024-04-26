@@ -21,7 +21,7 @@ def main(target, thres1, replace1, thres2, replace2):
     tg_obj[t2_bool] = replace2
     tg_obj[np.logical_and(t1_bool, t2_bool)] = replace1 + replace2
     
-    print(tg_obj)
+    print(tg_obj.tolist())
 
 if __name__ == "__main__":
     main()
