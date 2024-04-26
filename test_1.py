@@ -11,7 +11,7 @@ def main(target, thres1, replace1, thres2, replace2):
 
     ## array creation
     tg_param = np.asarray(target.split(',')).astype(int)
-    tg_arr = np.arange(tg_param[0], tg_param[1])
+    tg_arr = np.arange(tg_param[0], tg_param[1], dtype = int)
     tg_obj = tg_arr.astype(object)
 
     ## replace
