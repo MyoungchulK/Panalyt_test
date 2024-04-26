@@ -6,9 +6,8 @@ import click
 @click.option('-tr', '--thres', default = 1, type = int)
 def main(target, thres):
 
-    sums = 0
     his_arr = []
-    while sums != 1:
+    while True:
         digi = np.asarray(list(str(target))).astype(int)
         sums = np.nansum(digi ** 2)
         print(target, digi, sums) 
@@ -19,8 +18,7 @@ def main(target, thres):
         
         if sums == thres: 
             return True
-        else:
-            target = sums
+        target = sums
 
 if __name__ == "__main__":
     main()
