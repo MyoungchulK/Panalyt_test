@@ -17,9 +17,9 @@ def main(target, thres1, replace1, thres2, replace2):
     ## replace
     t1_bool = tg_arr % thres1 == 0
     t2_bool = tg_arr % thres2 == 0
-    tg_obj[t1_bool] = replace1
     tg_obj[t2_bool] = replace2
-    tg_obj[np.logical_and(t1_bool, t2_bool)] = replace1 + replace2
+    tg_obj[t1_bool] = replace1
+    tg_obj[np.logical_and(t1_bool, t2_bool)] += replace2
     
     print(tg_obj.tolist())
 
