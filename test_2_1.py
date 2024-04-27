@@ -8,15 +8,12 @@ def main(target):
 
     ## arrays
     al_arr = np.asarray(list(string.ascii_uppercase))
-    al_len = len(al_arr)
-    print(al_arr)
-
-    ## target
     tg_arr = np.asarray(list(target))
+    print(al_arr)
     print(tg_arr)
 
     ## decimals and corresponding numbers
-    digi_arr = (np.arange(len(tg_arr), 0, -1, dtype = int) -1) * al_len
+    digi_arr = (np.arange(len(tg_arr), 0, -1, dtype = int) -1) * len(al_arr)
     tg_idx = np.searchsorted(al_arr, tg_arr, side = 'right')
     print(digi_arr)
     print(tg_idx)
