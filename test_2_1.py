@@ -22,6 +22,22 @@ def main(target):
     results = np.nansum(digi_arr * tg_idx)
     print(f'{target} = {results}')
 
+def main_2(target):
+
+    ## array
+    al_arr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    al_len = len(al_arr)
+    tg_arr = target[::-1]
+    print(al_arr)
+    print(tg_arr)
+
+    ## finder
+    counts = 0
+    for idx, tg in enumerate(tg_arr):
+        counts += (al_len ** idx) * (al_arr.index(tg) + 1)
+
+    print(f'{target} = {counts}')
+
 if __name__ == "__main__":
     main()
-
+    #main_2('PANALYT')
