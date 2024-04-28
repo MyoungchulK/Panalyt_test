@@ -23,6 +23,21 @@ def main(target, thres1, replace1, thres2, replace2):
     
     print(tg_obj.tolist())
 
-if __name__ == "__main__":
-    main()
+def main_2(target, thres1, replace1, thres2, replace2):
 
+    tg_param = list(map(int, target.split(',')))
+    tg_obj = []
+    thres3 = thres1 * thres2
+    for tg in range(tg_param[0], tg_param[1] + 1):
+        if tg % thres3 == 0: ele = replace1 + replace2
+        elif tg % thres1 == 0: ele = replace1
+        elif tg % thres2 == 0: ele = replace2  
+        else: ele = tg
+        #if tg % (thres1 * thres2) == 0: ele += replace2 # could use this
+        tg_obj.append(ele)
+
+    print(tg_obj)
+
+if __name__ == "__main__":
+    #main()
+    main_2('1,50', 3, 'Pana', 5, 'Lyt')
