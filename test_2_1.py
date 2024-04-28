@@ -3,7 +3,7 @@ import click
 import string
 
 @click.command()
-@click.option('-tg', '--target', default = 'PANALYT')
+@click.option('-tg', '--target', default = 'PANALYT', type = str)
 def main(target):
 
     ## arrays
@@ -12,14 +12,14 @@ def main(target):
     print(al_arr)
     print(tg_arr)
 
-    ## decimals and corresponding numbers
-    digi_arr = (np.arange(len(tg_arr), 0, -1, dtype = int) -1) * len(al_arr)
+    ## base 26 to base 10
+    digi_arr = len(al_arr) ** (np.arange(len(tg_arr), 0, -1, dtype = int) - 1)
     tg_idx = np.searchsorted(al_arr, tg_arr, side = 'right')
     print(digi_arr)
     print(tg_idx)
 
     ## results
-    results = np.nansum(digi_arr + tg_idx)
+    results = np.nansum(digi_arr * tg_idx)
     print(f'{target} = {results}')
 
 if __name__ == "__main__":
