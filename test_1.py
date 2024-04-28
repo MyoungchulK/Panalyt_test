@@ -39,5 +39,5 @@ def main_2(target, thres1, replace1, thres2, replace2):
     print(tg_obj)
 
 if __name__ == "__main__":
-    #main()
-    main_2('1,50', 3, 'Pana', 5, 'Lyt')
+    main()
+    #main_2('1,50', 3, 'Pana', 5, 'Lyt')
